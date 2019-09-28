@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds" debug="false">
+
+    <property name="COMMON_LOG_PATTERN"
+              value="%d [%t] %-5p %c{0} - %m [%X{X-B3-TraceId:-},%X{X-B3-SpanId:-},%X{X-Span-Export:-}]%n"/>
+
+    <appender name="CONSOLE-APPENDER" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%d{HH:mm:ss.SSS} %-5level %logger{80} - %msg%n</Pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE-APPENDER"/>
+    </root>
+
+</configuration>
